@@ -1,0 +1,136 @@
+:: StoryTitle
+Twine Minigame 3
+
+
+:: StoryData
+{
+  "ifid": "D4AFC822-9E7D-4595-9517-5A8875C58159",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "start",
+  "zoom": 1
+}
+
+
+:: choices {"position":"200,325","size":"100,100"}
+This training will consist of two levels, your first level will be practcing your human habits!
+
+We have given you a few simple actvities to start your transformation. Make sure to choose the activites that a normal human would most likely do, then you'll gain some humanity points! Failing to choose the right activity however, will result in you losing some points, so be careful!
+
+What will you do?
+- [[Indulge in fast food->gain]]
+- [[Lick your forehead->lose]]
+- [[Listen to pop music->gain]]
+- [[Eat a human being->lose]]
+- [[Binge-watch movies->gain]]
+
+<!--I didn't really know what to put for the options so they r kind of random haha-->
+
+
+:: choices2 {"position":"225,625","size":"100,100"}
+Congrats on making it to the next level of your training! 
+
+This level will be slightly different from the previous one, you will need to partake in some more advanced activities in order to strengthen your //human// mind.
+
+Choose the option that would be more useful for understanding humans!
+- [[Learn human emotions->gain2]]
+- [[Over-analyze random objects->lose2]]
+- [[Study history and culture->gain2]]
+- [[Form a new language->lose2]]
+- [[Practice casual conversations->gain2]]
+
+
+:: end {"position":"500,775","size":"100,100"}
+Incredible work, $name.
+You are now ready to go to Earth!
+
+[img[https://i.postimg.cc/zXCqRG4S/Untitled3314-20260220224149.png]]
+
+We wish you luck on your journey, $name. Our future is in your hands.
+And remember, dont let your alien side show!
+!THE END
+
+
+:: gain {"position":"225,475","size":"100,100"}
+Great job, you've gained some humanity!
+<<set $humanity to $humanity + 1>>
+$name, you now have ''$humanity'' humanity points!
+<<if $humanity >=5>>
+[img[https://i.postimg.cc/MK7zjpgm/Untitled3314-20260220224156.png]]
+
+You are doing fantastic, $name. Your human form is now starting to show!
+Now that you're beginning to look more human, lets take you're training to the next [[level->choices2]]!
+<<else>>
+You're making some good progress!
+But you're still not quite there yet, lets continue your basic [[training->choices]]!
+<</if>>
+
+
+:: gain2 {"position":"325,775","size":"100,100"}
+Awesome job, you've gained some humanity!
+<<set $humanity to $humanity + 2>>
+$name, you now have ''$humanity'' humanity points!
+<<if $humanity >=15>>
+[img[https://i.postimg.cc/3JX3DxzB/Untitled3314-20260220224152.png]]
+
+Oh my, You look just a real human being $name! 
+I believe your training is now [[complete->end]].
+<<else>>
+Wonderful progress, $name.
+I think you will be ready for Earth in no time!
+[[Keep going!->choices2]]
+<</if>>
+
+
+:: help {"position":"400,450","size":"100,100"}
+It looks like you are working backwards, you look even more alien now!
+You need to get it together, $name. We need your human form to be ready ASAP!
+
+[img[https://i.postimg.cc/9FdcqQsB/Untitled3314-20260220224200.png]]
+
+Take this special [[supplement->gain]], it will revert your body back to its original form.
+Hopefully you can start making some real progress.
+
+
+:: lose {"position":"375,325","size":"100,100"}
+Uh-oh! That's not something a normal human would do...you've lost some humanity.
+<<set $humanity to $humanity - 1>>
+$name, you now have ''$humanity'' humanity points!
+<<if $humanity >=0>>
+Lets try to [[gain some more humanity->choices]] instead of losing it!
+<<else>>
+You're not doing so well...I think you need some [[help]]
+<</if>>
+
+
+
+:: lose2 {"position":"400,625","size":"100,100"}
+Thats not good, you have lost some humanity.
+<<set $humanity to $humanity - 2>>
+$name, you now have ''$humanity'' humanity points...lets attempt to get that number back up!
+<<if $humanity >=0>>
+Remember, try to do things that will help you become more human, lets on keep [[trying->choices2]]!
+<<else>>
+Oh no...seems like you've reached negative humanity points, I think you need some [[assistance->help]]
+<</if>>
+
+
+:: start {"position":"150,200","size":"100,100"}
+!Becoming Human!
+[img[https://i.postimg.cc/FsyhJHwb/Untitled3314-20260220224204.png]]
+You are an ''alien'' from the planet, "Jarlo-VI"
+<<set $humanity to 0>>
+Your mission is to infiltrate Earth in order to gather important information for our future invasion!
+However, before you begin, __you must be able to blend in with the humans.__
+
+You will need to undergo some formal training to gain humanity points and develop your human form. As you gain more humanity, you're human-ness will begin to show!
+
+Lets first start off by giving yourself a more //human// name.
+
+What will your name be?
+<<textbox "$name" "Y/N">>
+
+Great! Now that you've completed your first step, its time for you to begin training for your human [[transformation->choices]]!
+
+<!--I wanted to implement one of my interests into my game again so I named the alien planet "Jarlo-VI" which is the name of a planet from Honkai Star Rail :)-->
+
